@@ -1,9 +1,31 @@
 <script lang="ts">
   import Greet from './lib/Greet.svelte'
+
+  const CLIENT_ID = '';
+  const API_KEY = '';
+
+  const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
+  const SCOPES = '';
+
+  let tokenClient;
+  let gapInitiated = false;
+  let gisInitiated = false;
+
+  //document.getElementById('authorize_button').style.visibility = 'hidden';
+  //document.getElementById('signout_button').style.visibility = 'hidden';
+
+  function gapiLoaded() 
+  function handleAuthClick() {
+    
+  }
+
+  function handleSignoutClick() {
+    
+  }
 </script>
 
 <main class="container">
-  <h1>Welcome to Tauri!</h1>
+  <h1>Let's make some epic shit! </h1>
 
   <div class="row">
     <a href="https://vitejs.dev" target="_blank">
@@ -25,6 +47,8 @@
     <Greet />
   </div>
 
+  <button id="authorize_button" on:click|once={handleAuthClick}>Authorize</button>
+  <button id="signout_button" on:click={handleSignoutClick}>Sign Out</button>
 
 </main>
 
